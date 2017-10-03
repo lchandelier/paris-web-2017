@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<title>De l'accessibilité vite fait, bien fait - Mylène Chandelier</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/font/small.css" type="text/css" media="screen">	
+		<link rel="stylesheet" href="css/style.min.css" type="text/css" media="screen">
+		
+		<link rel="stylesheet" href="css/themes/default.min.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="AccesSlide.js" nonce="2726c7f26c"></script>
+		<script src="lang/lang_fr.js"></script>
+		<script src="highlight/highlight.pack.js"></script>
+
+		<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="manifest.json">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+
+	<body>
+		<!--<a lang="en" class="lang-btn" href="en/index.htm">English</a>-->
+		<div id="screen" class="modeplan" data-effect="Eno">
+
+			<div id="volet"></div>
+			
+			<header id="banner" role="banner" class="main-header clearfix">
+				<a href="https://mylene-chandelier.me">
+					<img id="logo" class="main-logo" src="img_slide/m.svg" width="44"
+						alt="Portfolio de Mylène Chandelier" role="img"/>
+				</a>
+				<h1 class="main-title">&ldquo;De l'accessibilité vite fait, bien fait&rdquo;</h1>
+			</header>
+		
+			<div id="nav" class="tool-bar footer-nav clearfix">
+				<div id="wrappernav">
+					<ul class="related">
+						<li>
+							<a href="https://twitter.com/crazycatlena" title="Retrouvez-moi sur Twitter">
+								<span class="fa fa-twitter" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/mchandelier" hreflang="en" title="Consultez mon repo Github">
+								<span class="fa fa-github" aria-hidden="true"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+			<div id="wrapper">
+			
+				<main role="main" id="main">
+		
+					<section class="slide couv">
+						<h2>De l'accessibilité vite fait, bien fait</h2>
+						<p>Paris Web 2017</p>
+						<p>
+							<a href="https://mylene-chandelier.me" title="Portfolio">Mylène Chandelier</a> 
+							(<a href="https://twitter.com/crazycatlena">@crazycatlena</a>)
+						</p>
+						<p>
+							Transcript : <a href="https://mylene-chandelier.me/blog/transcript.html">https://mylene-chandelier.me/blog/transcript.html</a> 
+							<br/> ou <br/>
+							
+							<img src="img_slide/qrcode.jpg" alt="QR Code du transcript"/>
+						</p>
+					</section>
+			
+					<section class="slide">
+						<h2>Comment ça &ldquo;vite fait, bien fait&rdquo; ?</h2>
+						<p>Critères rapides à mettre en place même si l'accessibilité est hors scope.</p>
+						<p>Parce qu'avec des petites choses simples on peut enlever beaucoup de barrières.</p>
+					</section>
+			
+					<section class="slide">
+						<h2>Mettre un attribut lang</h2>
+						<pre><code class="html">&lt;html lang="fr"&gt;</code></pre>
+						<pre><code class="html">&lt;p&gt;Texte en français &lt;span lang="en"&gt;Some english content&lt;/span&gt;&lt;/p&gt;</code></pre>
+						<p>
+							Permet aux lecteurs d'écrans de prononcer correctement le contenu du site
+						</p>
+					</section>
+					<section class="slide">
+						<h2>Mettre un attribut lang</h2>
+						<p>Mauvaise prononciation du lecteur d'écran</p>
+						<video preload="auto" controls>
+							<source src="video/bad.mp4" type="video/mp4">
+							<source src="video/bad.webm" type="video/webm">
+						</video>
+					</section>
+
+					<section class="slide">
+						<h2>Mettre un attribut lang</h2>
+						<p>Bonne prononciation du lecteur d'écran</p>
+						<video preload="auto" controls>
+							<source src="video/good.mp4" type="video/mp4">
+							<source src="video/good.webm" type="video/webm">
+						</video>
+					</section>
+					
+					<section class="slide">
+						<h2>Ne pas utiliser <span lang="en">maximum-scale</span>= 1.0</h2>
+						<pre><code class="html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale="1.0"&gt;</code></pre>
+						<p class="col-left">On ne peut plus zoomer la page sur mobile</p>
+						<p class="col-left">
+							<img src="img_slide/nope.jpg" class="center" alt="Chat en équilibre instable au-dessus d'une baignoire pleine d'eau disant nope nope nope">
+						</p>
+					</section>
+			
+					<section class="slide">
+						<h2>Ne pas supprimer l’<span lang="en">outline</span></h2>
+						<p>Cela aide à se repérer dans la page notamment dans le cas d'une navigation clavier.</p>
+						<p class="Cmasque"><strong>&ldquo;Oui mais c'est moche !&rdquo;</strong></p>
+						<p>
+							<a class="Cmasque" href="https://accessibility.blog.gov.uk/" title="Blog accessibilité du gouvernement anglais (nouvelle fenêtre)" hreflang="en">https://accessibility.blog.gov.uk</a>
+						</p>
+						<p>
+							<a href="http://www.outlinenone.com/" title="(nouvelle fenêtre)" hreflang="en" class="Cmasque">Plus d'informations sur le site <span lang="en">Outline none</span> (en anglais)</a>
+						</p>					
+					</section>
+
+					<section class="slide">
+						<h2>Ajouter des liens d'évitement ou liens d'accès rapide</h2>
+						<p>Permet d'aller directement au contenu qui nous intéresse</p>
+						<a href="https://www.service-public.fr/" title="(nouvelle fenêtre)">https://www.service-public.fr/</a>
+						<pre>
+							<code class="html">&lt;ul class="skip_links"&gt;
+	&lt;li&gt;&lt;a href="#page"&gt;Aller au contenu&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#page"&gt;Aller au pied de page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;main role="main" id="page" tabindex="-1"&gt;
+	&lt;p&gt;
+		Début du contenu auquel on accède plus rapidement grâce aux liens d'évitement.
+	&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+						<p class="Cmasque">Vous voulez les masquer ?</p>
+						<a href="http://www.ffoodd.fr/cache-cache-css/" target="_blank" rel="noopener" title="(nouvelle fenêtre)" class="Cmasque">Masquer des éléments de manière accessible</a>
+					</section>
+
+					<section class="slide">
+						<h2>Utiliser une sémantique cohérente</h2>
+						<pre>
+							<code class="html">&lt;span onclick="btnFunction();" class="btn btn-primary"&gt;Cliquez ici&lt;/span&gt;</code>
+						</pre>
+						<div class="Cmasque center">
+							<p>
+								<img src="img_slide/wtf.jpg" alt="Chat noir abasourdi ouvrant de grands yeux">
+							</p>
+						</div>
+					</section>
+			
+					<section class="slide">
+						<h2><abbr title="Accessible Rich Internet Applications">ARIA</abbr> est votre ami</h2>
+						<ul class="col-left">
+							<li class="Cmasque">Attributs ARIA et <code>role</code></li>
+							<li class="Cmasque">On peut naviguer d'un role  <span lang="en">landmark</span> à un autre via un lecteur d'écran ( <span lang="en"><code>banner</code>, <code>main</code></span>,...)</li>
+							<li class="Cmasque">Première règle : <strong>ne pas utiliser ARIA</strong></li>
+							<li class="Cmasque">JavaScript, Ajax,... ARIA à la rescousse !</li>
+						</ul>
+						<p class="col-left">
+							<img class="pull-right" src="img_slide/arya.jpg" alt="Arya Stark" width="400"/>
+						</p>
+					</section>
+				
+					<section class="slide">						
+						<h2>Bien organiser les niveaux de titres</h2>
+						<p><strong>Très important pour la navigation par titres pour les lecteurs d'écrans !</strong></p>
+						<p>Après un <code>h1</code> on met un <code>h2</code> et non un <code>h3</code></p>
+						<p>Utiliser CSS si le <code>h2</code> doit ressembler à un <code>h3</code>
+					</section>	
+
+					<section class="slide">						
+						<h2>Mettre un attribut alt sur les images</h2>
+						<ul>
+							<li class="Cmasque">L'image est décorative &rarr; <code>alt=""</code></li>
+							<li class="Cmasque">Texte dans l'image &rarr; <code>alt="Même texte que dans image"</code></li>
+							<li class="Cmasque">L'image représente une action &rarr; <code>alt="Ajouter au panier"</code></li>
+							<li class="Cmasque">L'image est informative &rarr; <code>alt="Emplacement"</code></li>
+						</ul>
+						<p>
+							<a href="https://bitsofco.de/alternative-text-and-images/" class="Cmasque" target="_blank" rel="noopener" title="(nouvelle fenêtre)">Détail de l'utilisation de l'attribut alt (en anglais)</a>
+						</p>
+					</section>
+
+					<section class="slide">
+						<h2>Utiliser des vrais label</h2>
+						<p>Le  <span lang="en">placeholder</span> n'est pas un label, il est là pour donner une suggestion de saisie.</p>
+						<p>Ne pas s'en servir pour donner une information importante (format de saisie de date par exemple)</p>
+						<p><a href="http://allthingssmitty.com/2016/09/25/accessible-floating-labels/" target="_blank" hreflang="en" rel="noopener">Technique de <span lang="en">floating labels</span> (en anglais)</a></p>
+						<p><a href="https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6" target="_blank" hreflang="en" rel="noopener">À n'utiliser qu'en dernier recours (en anglais)</a> </p>
+						<pre>
+							<code class="html">&lt;label for="place"&gt;Où préférez-vous vivre ?&lt;/label&gt;
+&lt;input type="text" id="place" name="place" placeholder="Campagne, Ville"&gt;</code>
+						</pre>
+					</section>
+
+					<section class="slide">
+						<h2>Comment tester ?</h2>
+						<ul>
+							<li class="Cmasque">Touche tab</li>
+							<li class="Cmasque">Désactiver les CSS/<abbr title="JavaScript">JS</abbr></li>
+							<li class="Cmasque">Passer son code <abbr title="HyperText Markup Language">HTML</abbr> au validateur du <abbr title="World Wide Web Consortium">W3C</abbr></li>
+							<li class="Cmasque">Utiliser un lecteur d'écran (<abbr title="NonVisual desktop Access">NVDA</abbr>, VoiceOver, Jaws,...)</li>
+						</ul>
+					</section>
+		
+					<section class="slide">
+						<h2>Attention toutefois</h2>
+						<p>
+							Ces critères sont un premier pas vers un site accessible mais il reste beaucoup à faire !
+						</p>
+						<p>
+							Il est essentiel de se former pour savoir comment faire un site complètement accessible.
+						</p>
+					</section>
+		
+					<section class="slide">
+						<h2>Pour aller plus loin</h2>
+						<ul class="ressource">
+							<li class="Cmasque">
+								<a href="http://www.accede-web.com/notices/" target="_blank" rel="noopener" title="(nouvelle fenêtre)">
+									<img src="img_slide/logo-atalan.png" alt="Atalan" height="38"/>
+									Les notices AcceDe Web (pour designers, développeurs, contributeurs)
+								</a>
+							</li>
+							<li class="Cmasque">
+								<a href="https://www.deque.com/products/axe/" hreflang="en" target="_blank" rel="noopener" title="(nouvelle fenêtre)">
+									<img src="img_slide/logo-axe.png" alt="aXe" height="100"/>
+									Plugin Axe pour Chrome et Firefox
+								</a>
+							</li>
+							<li class="Cmasque">
+								<a href="https://github.com/atalan/a11y-resources/blob/master/list-of-a11y-resources.md" hreflang="en" target="_blank" rel="noopener" title="(nouvelle fenêtre)">
+									<img src="img_slide/logo-atalan.png" alt="Atalan" height="38"/>
+									Liste de ressources sur ARIA, JavaScript, CSS, iOS/Android...
+								</a>
+							</li>
+							<li class="Cmasque">
+								<a href="http://code.viget.com/interactive-wcag/#responsibility=&level=aa" hreflang="en" target="_blank" rel="noopener" title="(nouvelle fenêtre)">
+									<img src="img_slide/logo-wcag.png" alt="WCAG" height="80"/>
+									Les critères <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 filtrés par métiers (en anglais)
+								</a>
+							</li>
+							<li class="Cmasque">
+								<a href="http://references.modernisation.gouv.fr/referentiel/criteres.html" target="_blank" rel="noopener" title="(nouvelle fenêtre)">
+									<img src="img_slide/logo-rgaa.png" alt="RGAA" height="80"/>
+									Le <abbr title="Référentiel Général d'Accessibilité pour les Administrations">RGAA</abbr> 
+								</a>
+							</li>
+							<li class="Cmasque">
+								<a href="http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html" target="_blank" rel="noopener" title="(nouvelle fenêtre)">
+									<img src="img_slide/logo-accessiweb.png" alt="Accessiweb" height="80"/>
+									et Accessiweb
+								</a>
+							</li>
+						</ul>
+					</section>	
+					
+					<section class="slide">						
+						<h2>On récapitule</h2>
+						<ul>
+							<li class="Cmasque">Attribut lang</li>
+							<li class="Cmasque">Pas d'attribut  <span lang="en">maximum-scale</span>= 1.0</li>
+							<li class="Cmasque">Outline CSS</li>
+							<li class="Cmasque">Liens d'évitement</li>
+							<li class="Cmasque">Sémantique correcte</li>
+							<li class="Cmasque">ARIA</li>
+							<li class="Cmasque">Titres dans le bon ordre</li>
+							<li class="Cmasque">alt sur les images de manière appropriée</li>
+							<li class="Cmasque">Label au lieu de  <span lang="en">placeholder</span></li>
+							<li class="Cmasque">Tester, tester, tester</li>
+						</ul>
+					</section>
+
+					<section class="slide end noprint">						
+						<h2>Merci</h2>
+						<ul class="col-left">
+							<li class="Cmasque">À mes collègues pour leurs conseils et leur aide</li>
+							<li class="Cmasque">Pour ce moment</li>
+						</ul>
+						<p class="col-left Cmasque">
+							<img src="img_slide/a11y.jpg" width="400" alt="keep calm and make it accessible" lang="en" class="pull-right">
+						</p>
+					</section>	
+				</main>		
+			</div>
+
+			<div id="setting" class="tool-block tool-block-settings hide" role="dialog" tabindex="-1"></div>	
+		</div>
+
+		<div id="Caudio"></div>
+		<div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+		<script src="slide.js"></script>
+		<script src="pw.js"></script>
+
+	</body>
+</html>

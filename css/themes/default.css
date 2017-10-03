@@ -1,0 +1,700 @@
+/*
+Index
+======
+1. GENERIC STYLE
+	1.1 TABLE
+2. TYPO
+	2.1 HEADINGS
+	2.2 TEXT
+3. HEADER
+4. VOLET
+5. TOOLBAR
+	5.1 NAVIGATION ELEMENTS
+	5.2 RELATED LINKS
+6. PAGINATION SLIDE LINEAR LAYOUT
+7. SLIDES
+	7.1 COLUMN
+	7.2 FREAKY DISC
+8. TOOL BLOCK (SUMMARY & CONFIG)
+	8.1 TOOLS ELEMENTS
+9. CSS TRANSITIONS
+*/
+
+@font-face {
+	font-family: 'os-bold';
+	src: url('../fonts/opensans-bold-webfont.eot');
+	src: url('../fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-bold-webfont.woff') format('woff'),
+         url('../fonts/opensans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'os-regular';
+	src: url('../fonts/opensans-regular-webfont.eot');
+	src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'os-light';
+	src: url('../fonts/opensans-light-webfont.eot');
+	src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-light-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-light-webfont.woff') format('woff'),
+         url('../fonts/opensans-light-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), 
+  			url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
+  			url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+  			url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+  			url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'lato_light';
+    src: url('../fonts/lato-light-webfont.woff2') format('woff2'),
+        url('../fonts/lato-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lato_reg';
+    src: url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+        url('../fonts/lato-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lato_black';
+    src: url('../fonts/lato-black-webfont.woff2') format('woff2'),
+        url('../fonts/lato-black-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+ * -------------------------
+ * @section 1. GENERIC STYLE
+ * -------------------------
+ */
+
+body {
+	background-color: #fafafa;
+	color: #5f5f5f;
+	font-family: 'lato_reg';
+}
+
+a,
+a:hover,
+a:focus,
+button,
+button:hover,
+button:focus,
+input,
+input:hover,
+input:focus {
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+a,
+.fa {
+	color: #666;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+a:focus,
+select:focus,
+button:focus {
+	outline: 2px solid #4bc4b1;
+}
+
+button {
+	background: none;
+	border: none;
+}
+
+.slide button {
+	border: 1px solid #F9F9F9;
+	border-radius: 3px;
+	font-size: 90%;
+	margin-bottom: 2px;
+}
+
+.slide button:hover {
+	border: 1px solid #4bc4b1;
+	background: #F9F9F9;
+}
+
+figcaption {
+	font-size: 80%;
+}
+
+strong {
+	font-family: 'lato_black';
+}
+
+code,
+kbd {
+	position: relative;
+	top: -2px;
+	padding: 1px 3px;
+	border: 1px solid #666;
+	background: #F9F9F9;
+	font-size: 70%;
+	line-height: 1em;
+	white-space: nowrap;
+	border-radius: 2px;
+}
+
+h3 code,
+h3 kbd {
+	background: inherit;
+}
+
+pre code {
+	border: 0;
+	white-space: pre-wrap;
+}
+
+.hljs {
+	padding: 10px;
+}
+
+.slide img {
+	box-shadow: 0 0 3px #666;
+	border: 3px solid #fff;
+}
+
+/** @subsection 1.1 TABLE **/
+
+table {
+	width: auto;
+	min-width: 70%;
+	margin: auto;
+}
+
+caption {
+	padding: 5px;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: left;
+	background: #F9F9F9;
+}
+
+thead {
+	border-bottom: 1px solid #666;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #F9F9F9;
+}
+
+th {
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+td {
+	padding: 10px;
+	text-align: center;
+}
+
+/**
+ * -------------------------
+ * @section 2. TYPO
+ * -------------------------
+ */
+
+/** @subsection 2.1 HEADINGS **/
+
+h2 {
+	margin-bottom: 0;
+	-webkit-font-feature-settings: "c2sc";
+	-moz-font-feature-settings: "c2sc";
+	font-feature-settings: "c2sc";
+	font-weight: normal;
+	font-family: lato_black, arial, sans-serif;
+	line-height: 1.1em;
+}
+
+.couv h2,
+.end h2 {
+	float: none;
+}
+
+h3 {
+	padding: 0 5px 5px 5px;
+	margin: 0;
+	-webkit-font-feature-settings: "c2sc";
+	-moz-font-feature-settings: "c2sc";
+	font-feature-settings: "c2sc";
+	font-weight: normal;
+	font-family: lato_black;
+}
+
+h4 {
+	margin: 0.3em;
+}
+
+h5 {
+	margin: 0.3em;
+}
+
+h6 {
+	margin: 0.3em;
+}
+
+/** @subsection 2.2 TEXT **/
+
+.slide p,
+.slide ul,
+.slide ol,
+.slide blockquote {
+	margin: 0.2em 0 0.5em 0;
+	line-height: 150%;
+}
+
+.slide ul ul,
+.slide ul ol {
+	font-size: 100%;
+	line-height: 100%;
+}
+
+.slide ul {
+	padding: 0;
+}
+
+.slide ul li {
+	list-style: disc inside;
+}
+
+.slide .small {
+	font-size: 90%;
+	font-weight: normal;
+}
+
+.slide .small * {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+/**
+ * -------------------------
+ * @section 3. HEADER
+ * -------------------------
+ */
+
+.main-header h1 {
+	font-size: 3vh;
+	color: #666;
+	font-weight: normal;
+}
+
+.main-header a {
+	display: inline-block;
+}
+
+.modeplan .main-header {
+	background: #fff;
+	box-shadow: 0 2px 3px #bbb;
+}
+
+/**
+ * -------------------------
+ * @section 4. VOLET
+ * -------------------------
+ */
+
+#volet {
+	background: #fff;
+}
+
+/**
+ * -------------------------
+ * @section 5. TOOLBAR
+ * -------------------------
+ */
+
+.tool-bar {
+	background: #fff;
+}
+
+.modeplan .tool-bar {
+	box-shadow: 0 -2px 3px #bbb;
+	background: #fff;
+}
+
+/** @subsection 5.1 NAVIGATION ELEMENTS **/
+
+.select-goto {
+	color: #666;
+	border: none;
+}
+
+.slide-counter-current {
+	background-color: #fff;
+	color: #666;
+	border: 1px solid #666;
+}
+
+.slide-counter-total {
+	background-color: #666;
+	color: #fff;
+	border: 1px solid transparent;
+}
+
+.btn[disabled="disabled"]:hover {
+	opacity: 1;
+	cursor: default;
+}
+
+/** @subsection 5.2 RELATED LINKS **/
+
+.related a {
+	padding: 2px 3px;
+	text-decoration: none;
+}
+
+.related a img {
+	position: relative;
+	margin-top: -4px;
+}
+
+/**
+ * -------------------------
+ * @section 6. PAGINATION SLIDE LINEAR LAYOUT
+ * -------------------------
+ */
+
+.index {
+	padding-top: 15px;
+	border-radius: 0;
+}
+
+.index span {
+	padding: 0;
+	color: #fff;
+	background-color: #666;
+}
+
+/**
+ * -------------------------
+ * @section 7. SLIDES
+ * -------------------------
+ */
+
+.modeplan .slide {
+	border-bottom: 2px solid #666;
+	padding-top: 1em;
+}
+
+.slide code {
+	text-align: left;
+}
+
+.couv,
+.end {
+	color: #666;
+}
+
+.couv {
+	text-align: center;
+}
+
+.credit {
+	padding: 0;
+}
+
+.credit li {
+	display: inline-block;
+}
+
+.credit a {
+	padding: 2px 3px;
+	border: 1px solid #F9F9F9;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.credit a:hover,
+.credit a:focus {
+	background: orange;
+	border: 1px solid #666;
+}
+
+video {
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	height: auto;
+}
+
+@media screen and (max-width: 48em) {
+	video {
+		margin-top: 20px;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.ressource img {
+	border: 0;
+	box-shadow: none;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.ressource {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ressource li {
+	width: 33.33%;
+	padding: 50px 10px 0 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.slide ul.ressource li {
+	list-style: none;
+}
+
+/** @subsection 7.1 COLUMN **/
+
+/** @subsection 7.2 FREAKY DISC **/
+
+.list-disc {
+	padding: 0;
+}
+
+.list-disc li {
+	list-style: none;
+}
+
+button.disc {
+	display: block;
+	width: 100%;
+	border: none;
+	padding-top: 85px;
+}
+
+button.disc1 {
+	background: transparent url("../img/disc_1_gray.png") center top no-repeat;
+}
+
+button.disc1:hover,
+button.disc1:focus {
+	background: transparent url("../img/disc_1.png") center top no-repeat;
+}
+
+/**
+ * -------------------------
+ * @section 8. TOOL BLOCK (SUMMARY & CONFIG)
+ * -------------------------
+ */
+
+.tool-block {
+	background-color: #F9F9F9;
+	color: #666;
+	box-shadow: 0 0 10px #000;
+}
+
+.tool-block-title {
+	padding-top: 5px;
+	font-size: 1.2em;
+	text-align: center;
+	border-bottom: 1px dashed #666;
+	text-transform: uppercase;
+}
+
+
+.tool-block label,
+.tool-block select {
+	font-size: 0.75em;
+}
+
+.tool-block li {
+	font-size: 1.25em;
+}
+
+/** @subsection 8.1 TOOLS ELEMENTS **/
+
+.tool-block-settings fieldset {
+	border: none;
+}
+
+.tool-block-settings legend {
+	font-size: 1em;
+	-webkit-font-feature-settings: "c2sc";
+	-moz-font-feature-settings: "c2sc";
+	font-feature-settings: "c2sc";
+	font-variant: small-caps;
+}
+
+.help {
+	border: 1px solid #4bc4b1;
+	background: #666;
+	color: #fff;
+}
+
+.tool-block button:hover,
+.tool-block button:focus {
+	color: #666;
+}
+
+.btn-setting { /* Save & Default button*/
+	padding: 10px 13px;
+	border: 0;
+	background: #4bc4b1;
+	color: #1B4751;
+	border-radius: .2rem;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: lato_black,arial,sans-serif;
+}
+
+.btn-setting:hover,
+.btn-setting:focus {
+	
+	background: #1B4751;
+	color: #4bc4b1;
+}
+
+/**
+ * -------------------------
+ * @section 9. CSS TRANSITIONS
+ * -------------------------
+ */
+
+#volet.Flash {
+	background: #666;
+}
+
+@media screen and (min-width: 48em) {
+
+	h2 {
+		margin-bottom: 0.5em;
+	}
+
+	.col-left {
+		float: left;
+		width: 50%;
+		padding: 0 5% 0 0;
+	}
+
+	.col-right {
+		float: right;
+		width: 50%;
+		padding: 0 0 0 5%;
+	}
+
+	.list-disc li {
+		float: left;
+		width: 25%;
+	}
+
+}
+
+@media screen and (max-width: 48em) and (min-width:24em) {
+
+	.list-disc li {
+		float: left;
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 48em) {
+
+	.main-header h1 {
+		font-size: 80%;
+	}
+
+	.main-header {
+		background: #fff;
+		padding: 5px;
+		box-shadow: 0 2px 3px #bbb;
+	}
+
+	.tool-bar {
+		box-shadow: 0 -2px 3px #bbb;
+	}
+
+	.ressource li {
+		width: 100%;
+	}
+
+	.related {
+		background: #fff;
+		border: 3px solid #F9F9F9;
+		border-left: 0;
+		border-bottom: 0;
+	}
+}
+@media screen and (min-width: 48em) and (max-width: 72em) {
+
+	.ressource li {
+		width: 49.99%;
+	}
+
+}
+
+.footer-nav {
+	background: #173d51;
+}
+
+.footer-nav .fa {
+	color: #4bc4b1;
+	-webkit-transition: color .5s;
+	transition: color .5s;
+}
+
+.footer-nav a {
+	font-size: 1.5rem;
+}
+
+.footer-nav button:hover .fa,
+.footer-nav button:active .fa,
+.footer-nav button:focus .fa,
+.footer-nav a:hover .fa,
+.footer-nav a:active .fa,
+.footer-nav a:focus .fa {
+	color: #fff;
+}
+
+.lang-btn{position:absolute;text-decoration:none;font-size:70%;right:20px;border-top:0;padding:0 5px 3px 5px;border-radius:0 0 3px 3px;z-index:900;box-shadow:0 0 2px #999;background:#fafafa}
+.lang-btn:hover,.lang-btn:focus{background:#f2f2f2;}
+
+.db {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
